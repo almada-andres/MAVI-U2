@@ -1,0 +1,4 @@
+﻿MAVI-U2.obj : error LNK2019: símbolo externo "public: __thiscall b2World::b2World(struct b2Vec2 const &)" (??0b2World@@QAE@ABUb2Vec2@@@Z) sin resolver al que se hace referencia en la función _main
+MAVI-U2.obj : error LNK2019: símbolo externo "public: __thiscall b2World::~b2World(void)" (??1b2World@@QAE@XZ) sin resolver al que se hace referencia en la función _main
+C:\Users\Andés\Desktop\MAVI 2\EsqueletoAPP\Externo\box2d\lib\vs2019\Release\box2d.lib : warning LNK4272: el tipo de máquina de biblioteca 'x64' está en conflicto con el tipo de máquina de destino 'x86'
+C:\Users\Andés\source\repos\MAVI-U2\Debug\MAVI-U2.exe : fatal error LNK1120: 2 externos sin resolver
