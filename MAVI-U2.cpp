@@ -81,7 +81,15 @@ int main()
                 //Crear bala
                 b2BodyDef bulletDef;
                 bulletDef.type = b2_dynamicBody;
-                bulletDef.position.Set(50.0f / SCALE, (600.0f - 590.0f) / SCALE);
+                float angleRad = cannonAngle * DEG_TO_RAD;
+                float cannonX = cannon.getPosition().x;
+                float cannonY = cannon.getPosition().y;
+
+                float spawnX = cannonX + std::cos(angleRad) * 50.0f;
+                float spawnY = cannonY - std::sin(angleRad) * 50.0f;
+
+                bulletDef.position.Set(spawnX / SCALE, (600.0f - spawnY) / SCALE);
+
                 b2Body* bulletBody = world.CreateBody(&bulletDef);
 
                 b2CircleShape circle;
@@ -95,8 +103,7 @@ int main()
 
                 //impulso
 
-                float angleRad = cannonAngle * DEG_TO_RAD;
-                float power = 10.0f;
+                float power = 1.2f;
                 bulletBody->ApplyLinearImpulseToCenter(b2Vec2(std::cos(angleRad) * power, std::sin(angleRad) * power), true);
 
                 //Grafica
